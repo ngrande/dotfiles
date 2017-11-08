@@ -1,0 +1,31 @@
+#
+# ~/.bashrc
+#
+
+# prevent history commands from executing by ! or !! but wait for execution by user
+shopt -s histverify
+
+# greeting
+archey3
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# ls
+alias ls='ls -ahrt --color=auto'
+alias ll='ls -alhrt --color=auto'
+
+# pacman and yaourt
+alias paorph='sudo pacman -Rns $(pacman -Qdtq)'
+alias paup='sudo pacman -Syu'
+alias yaup='yaourt -Syu'
+alias yaorph='yaourt -Rns $(yaourt -Qdtq)'
+
+# btrfs
+alias buh='sudo btrfs filesystem usage /home'
+alias bur='sudo btrfs filesystem usage /'
+
+# shell prompt
+COLOR="\[\033[1;36m\]"
+NO_COLOR="\[\033[0m\]"
+PS1=' \u@\h \W >> '

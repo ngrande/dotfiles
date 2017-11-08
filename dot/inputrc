@@ -1,0 +1,3 @@
+# incremental bash completion - nice trick found on reddit by /u/36
+"\e[A": history-search-backward
+"\e[B": history-search-forward
