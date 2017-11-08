@@ -12,7 +12,7 @@ archey3
 [[ $- != *i* ]] && return
 
 # ls
-alias ls='ls -ahrt --color=auto'
+alias ls='ls -hrt --color=auto'
 alias ll='ls -alhrt --color=auto'
 
 # pacman and yaourt
