@@ -29,3 +29,7 @@ alias bur='sudo btrfs filesystem usage /'
 COLOR="\[\033[1;36m\]"
 NO_COLOR="\[\033[0m\]"
 PS1=' \u@\h \W >> '
+
+export HISTTIMEFORMAT="[%Y-%m-%d %T] "
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
