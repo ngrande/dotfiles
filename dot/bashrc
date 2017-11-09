@@ -22,8 +22,10 @@ alias yaup='yaourt -Syu'
 alias yaorph='yaourt -Rns $(yaourt -Qdtq)'
 
 # btrfs
-alias buh='sudo btrfs filesystem usage /home'
-alias bur='sudo btrfs filesystem usage /'
+#alias buh='sudo btrfs filesystem usage /home'
+alias buh='sudo echo ""; echo "root usage"; sudo btrfs filesystem usage /home | grep -E "^\s+(Used|Free \(estimated\)):";echo ""'
+#alias bur='sudo btrfs filesystem usage /'
+alias bur='sudo echo ""; echo "root usage"; sudo btrfs filesystem usage / | grep -E "^\s+(Used|Free \(estimated\)):";echo ""'
 
 # shell prompt
 COLOR="\[\033[1;36m\]"
