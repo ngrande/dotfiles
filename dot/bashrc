@@ -33,3 +33,6 @@ PS1=' \u@\h \W >> '
 export HISTTIMEFORMAT="[%Y-%m-%d %T] "
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
+
+# add my scripts to PATH
+PATH=$PATH:~/projects/scripts
