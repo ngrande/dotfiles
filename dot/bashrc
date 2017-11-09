@@ -8,6 +8,11 @@ shopt -s histverify
 # greeting
 archey3
 
+# after greeting include additional file with commands (won't be commited)
+if [ -f $HOME/.bashrc_ext ]; then
+	. $HOME/.bashrc_ext
+fi
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -37,4 +42,4 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 
 # add my scripts to PATH
-PATH=$PATH:~/projects/scripts
+PATH=$PATH:$HOME/projects/scripts
