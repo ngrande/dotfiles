@@ -23,8 +23,8 @@ alias ll='ls -alhrt --color=auto'
 # pacman and yaourt
 alias paorph='sudo pacman -Rns $(pacman -Qdtq)'
 alias paup='sudo pacman -Syu'
-alias yaup='yaourt -Syu'
-alias yaorph='yaourt -Rns $(yaourt -Qdtq)'
+alias aurup='pacaur -Syu'
+alias aurorph='pacaur -Rns $(pacaur -Qdtq)'
 
 # btrfs
 #alias buh='sudo btrfs filesystem usage /home'
