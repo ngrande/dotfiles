@@ -38,8 +38,8 @@ alias ll='ls -al'
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # pacman and yaourt
-alias paorph='pacaur -Rns $(pacaur -Qdtq)'
-alias paup='pacaur -Syu'
+alias paorph='aurman -Rns $(aurman -Qdtq)'
+alias paup='aurman -Syu'
 
 # btrfs
 #alias buh='sudo btrfs filesystem usage /home'
@@ -50,7 +50,7 @@ alias bur='sudo echo ""; echo "root usage"; sudo btrfs filesystem usage / | grep
 # shell prompt
 COLOR="\[\033[1;36m\]"
 NO_COLOR="\[\033[0m\]"
-PS1=' \u@\h \W >> '
+PS1='\u@\h \W >> '
 
 export HISTTIMEFORMAT="[%Y-%m-%d %T] "
 export HISTCONTROL=erasedups
@@ -58,3 +58,4 @@ export HISTSIZE=10000
 
 # add my scripts to PATH
 PATH=$PATH:$HOME/projects/scripts
+PATH=$PATH:$HOME/.local/bin
