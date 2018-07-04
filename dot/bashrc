@@ -2,6 +2,10 @@
 # ~/.bashrc
 #
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+# see also: https://unix.stackexchange.com/questions/257571/why-does-bashrc-check-whether-the-current-shell-is-interactive#257613
+
 # prevent history commands from executing by ! or !! but wait for execution by user
 shopt -s histverify
 
@@ -22,10 +26,7 @@ if [ -f $HOME/.bashrc_ext ]; then
 	. $HOME/.bashrc_ext
 fi
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-# ls
+# alias's
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
@@ -37,15 +38,15 @@ alias ll='ls -al'
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# pacman and yaourt
+# pacman and aur helper
 alias paorph='aurman -Rns $(aurman -Qdtq)'
 alias paup='aurman -Syu'
 
 # btrfs
 #alias buh='sudo btrfs filesystem usage /home'
-alias buh='sudo echo ""; echo "root usage"; sudo btrfs filesystem usage /home | grep -E "^\s+(Used|Free \(estimated\)):";echo ""'
+alias buh='sudo echo ""; echo "/home usage"; sudo btrfs filesystem usage /home | grep -E "^\s+(Used|Free \(estimated\)):";echo ""'
 #alias bur='sudo btrfs filesystem usage /'
-alias bur='sudo echo ""; echo "root usage"; sudo btrfs filesystem usage / | grep -E "^\s+(Used|Free \(estimated\)):";echo ""'
+alias bur='sudo echo ""; echo "/ usage"; sudo btrfs filesystem usage / | grep -E "^\s+(Used|Free \(estimated\)):";echo ""'
 
 # shell prompt
 COLOR="\[\033[1;36m\]"
