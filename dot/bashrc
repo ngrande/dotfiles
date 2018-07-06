@@ -51,7 +51,47 @@ alias bur='sudo echo ""; echo "/ usage"; sudo btrfs filesystem usage / | grep -E
 # shell prompt
 COLOR="\[\033[1;36m\]"
 NO_COLOR="\[\033[0m\]"
-PS1='\u@\h \W >> '
+
+function _git_prompt { 
+	local cwd="\w" 
+	local branch="" 
+	local git_status="" 
+	
+	git_status="$(LANG=C git status 2> /dev/null)" 
+	if [[ $? -eq 0 ]]; then 
+		local rela_dir="$(git rev-parse --show-prefix)" 
+		rela_dir="${rela_dir%/}" 
+		local repo_root="${PWD%$rela_dir}" 
+		[[ "$repo_root" =~ ^"$HOME"(/|$) ]] && repo_root="~${repo_root#$HOME}" 
+		cwd="\[\e[36m\]${repo_root}\[\e[0m\]${rela_dir}" 
+		local pattern="^(# )?On branch ([^${IFS}]*)" 
+		if [[ ${git_status} =~ ${pattern} ]]; then 
+			local branch_name=${BASH_REMATCH[2]} 
+			local branch_color="" 
+			if [[ ${git_status} =~ (working (tree|directory) clean) ]]; then 
+				branch_color="\e[32m" 
+				if [[ ${git_status} =~ (Your branch is ahead) ]]; then 
+					branch_color="\e[35m" 
+				elif [[ "$(git log --all --not --remotes --tags --oneline)" ]]; then 
+					branch_color="\e[33m" 
+				fi
+			else
+				branch_color="\e[31m" 
+			fi
+			
+			branch="[\[$branch_color\]$branch_name\[\e[0m\]]" 
+		fi
+		
+		if [[ ${git_status} =~ (HEAD detached) ]]; then 
+			branch="[\[\e[1;31;46m\]DETACHED HEAD\[\e[0m\]]" 
+		fi
+	fi
+
+	PS1="\[\e]0;\u@\h:\w\a\e[0m\]\u@\h:${cwd}${branch}\\$ " 
+} 
+
+PROMPT_COMMAND=_git_prompt
+#PS1='\u@\h \W >> '
 
 export HISTTIMEFORMAT="[%Y-%m-%d %T] "
 export HISTCONTROL=erasedups
