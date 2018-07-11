@@ -92,10 +92,11 @@ function _git_prompt {
 
 PROMPT_COMMAND=_git_prompt
 #PS1='\u@\h \W >> '
-
-export HISTTIMEFORMAT="[%Y-%m-%d %T] "
-export HISTCONTROL=erasedups
-export HISTSIZE=10000
+ 
+HISTTIMEFORMAT="[%Y-%m-%d %T %Z] "
+HISTCONTROL=erasedups
+HISTSIZE=100000
+HISTFILESIZE=100000
 
 # add my scripts to PATH
 PATH=$PATH:$HOME/projects/scripts
