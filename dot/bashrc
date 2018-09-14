@@ -37,8 +37,8 @@ alias ll='ls -al'
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # pacman and aur helper
-alias paorph='aurman -Rns $(aurman -Qdtq)'
-alias paup='aurman -Syu'
+alias paorph='yay -Rns $(yay -Qdtq)'
+alias paup='yay -Syu'
 
 # btrfs
 #alias buh='sudo btrfs filesystem usage /home'
