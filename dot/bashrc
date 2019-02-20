@@ -79,7 +79,7 @@ function _git_prompt {
 	local branch="" 
 	local git_status="" 
 
-	pwd | grep -E dev_linux[0-9]+_grande 1> /dev/null
+	pwd | grep -E dev-linux[0-9]+ 1> /dev/null
 	if [[ $? -eq 0 ]]; then
 		return
 	fi
