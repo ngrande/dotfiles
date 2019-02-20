@@ -21,4 +21,18 @@ do
 	ln -sf $file ~/.ssh/$config_name
 done
 
+echo "Installing pacman hooks..."
+echo "This requires sudo!"
+echo "Confirm that you can read... [ENTER]"
+read
+sudo mkdir -p /etc/pacman.d/hooks
+for hook in "$(pwd)/pacman/hooks"/*
+do
+	hook_name=$(basename $hook)
+	echo "Copying hook $hook_name to /etc/pacman.d/hooks"
+	echo "Confirm with [ENTER]"
+	read
+	sudo cp $hook /etc/pacman.d/hooks/
+done
+
 echo "Finished."
