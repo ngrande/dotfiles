@@ -6,6 +6,9 @@
 [[ $- != *i* ]] && return
 # see also: https://unix.stackexchange.com/questions/257571/why-does-bashrc-check-whether-the-current-shell-is-interactive#257613
 
+# prevent new terminals to open a new session in the same directory as another terminal is in
+cd
+
 # prevent history commands from executing by ! or !! but wait for execution by user
 shopt -s histverify
 
