@@ -1,0 +1,35 @@
+[user]
+	email = devlup@outlook.com
+	name = ngrande
+
+[credential]
+	helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
+
+[push]
+	default = simple
+
+[core]
+	pager = less -SMFRX
+
+[log]
+	date = iso-local
+
+[commit]
+	verbose = true
+	
+[alias]
+	st = status
+	co = checkout
+	comm = commit
+	comma = commit -a
+	moff = merge --no-ff
+	diffc = diff --cached
+	k = !gitk --all --date-order
+	desc = describe --always --tags --dirty
+	cherryx = cherry-pick -x
+	
+	unpushed = log --all --not --remotes --tags --oneline --topo-order
+	unp = !git unpushed
+	
+	lol = log --pretty=tformat:'%C(auto)%h %cd %an%d %C(auto,bold)%s%C(auto)' --graph --date='format-local:%Y-%m-%d %H:%M:%S' --date-order
+	lola = !git lol --all
