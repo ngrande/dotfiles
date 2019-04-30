@@ -50,6 +50,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ls='ls -hrt --color=auto'
 alias ll='ls -Al'
+# this might cause some trouble
+alias python='bpython'
 # gcc output color
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 # less colorized
