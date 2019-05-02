@@ -147,7 +147,7 @@ HISTFILESIZE=100000
 # add my scripts to PATH
 PATH=$PATH:$HOME/projects/scripts
 PATH=$PATH:$HOME/.local/bin
-EDITOR=vim
+export EDITOR=vim
 
 # greeting with logo
 archey3
