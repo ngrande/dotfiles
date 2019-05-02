@@ -18,13 +18,14 @@
 		excludesfile = ~/.gitignore
 
 [log]
-	date = iso
+	date = iso-local
 
 [credential]
 	helper = store
 
 [commit]
 	template = ~/.git-template
+	verbose = true
 
 [alias]
 	st = status
@@ -38,7 +39,7 @@
 	unpushed = log --all --not --remotes --tags --oneline --topo-order
 	unp = !git unpushed
 
-	lol = log --pretty=format:'%C(green)%h %C(37)%cd %C(38)%an%C(auto)%d %C(bold)%s' --graph --date-order
+	lol = log --pretty=format:'%C(green)%h %C(37)%cd %C(38)%an%C(auto)%d %C(bold)%s' --graph --date='format-local:%Y-%m-%d %H:%M:%S' --date-order
 	lola = !git lol --all
 
 # vim: tabstop=4 shiftwidth=4 noexpandtab ft=gitconfig
