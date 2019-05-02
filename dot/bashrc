@@ -12,8 +12,6 @@ cd
 # prevent history commands from executing by ! or !! but wait for execution by user
 shopt -s histverify
 
-# greeting
-archey3
 # notify user if restart necessary
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -87,12 +85,15 @@ alias buh='sudo echo ""; echo "/home usage"; sudo btrfs filesystem usage /home |
 #alias bur='sudo btrfs filesystem usage /'
 alias bur='sudo echo ""; echo "/ usage"; sudo btrfs filesystem usage / | grep -E "^\s+(Used|Free \(estimated\)):";echo ""'
 
-# shell prompt
-COLOR="\[\033[1;36m\]"
-NO_COLOR="\[\033[0m\]"
+# shell prompt colors
+# TRUE COLOR: 38;2;R;G;Bm (don't know what the 38;2; is for...)
+TRUE_COLOR="\e[38;2;255;3;160m"
+NO_GIT_COLOR="\e[38;2;255;135;200m"
+GIT_COLOR="\e[1;36m"
+NO_COLOR="\e[m"
 
 function _git_prompt { 
-	local cwd="\w" 
+	local cwd="${NO_GIT_COLOR}\w${NO_COLOR}" 
 	local branch="" 
 	local git_status="" 
 
@@ -107,7 +108,7 @@ function _git_prompt {
 		rela_dir="${rela_dir%/}" 
 		local repo_root="${PWD%$rela_dir}" 
 		[[ "$repo_root" =~ ^"$HOME"(/|$) ]] && repo_root="~${repo_root#$HOME}" 
-		cwd="\[\e[36m\]${repo_root}\[\e[0m\]${rela_dir}" 
+		cwd="${GIT_COLOR}${repo_root}${rela_dir}${NO_COLOR}" 
 		local pattern="^(# )?On branch ([^${IFS}]*)" 
 		if [[ ${git_status} =~ ${pattern} ]]; then 
 			local branch_name=${BASH_REMATCH[2]} 
@@ -123,7 +124,7 @@ function _git_prompt {
 				branch_color="\e[31m" 
 			fi
 			
-			branch="[\[$branch_color\]$branch_name\[\e[0m\]]" 
+			branch="${TRUE_COLOR}[${NO_COLOR}\[$branch_color\]$branch_name\[\e[0m\]${TRUE_COLOR}]${NO_COLOR}" 
 		fi
 		
 		if [[ ${git_status} =~ (HEAD detached) ]]; then 
@@ -131,7 +132,8 @@ function _git_prompt {
 		fi
 	fi
 
-	PS1="\[\e]0;\u@\h:\w\a\e[0m\]\u@\h:${cwd}${branch}\\$ " 
+	# PS1="\[\e]0;\u@\h:\w\a\e[0m\]\u@\h:${cwd}${branch}\\$ "
+	PS1="\[\e]0;\u@\h:\w\a\e[0m\]${TRUE_COLOR}\u@\h:${NO_COLOR}${cwd}${branch}${TRUE_COLOR}\$${NO_COLOR} "
 } 
 
 PROMPT_COMMAND=_git_prompt
@@ -146,3 +148,6 @@ HISTFILESIZE=100000
 PATH=$PATH:$HOME/projects/scripts
 PATH=$PATH:$HOME/.local/bin
 EDITOR=vim
+
+# greeting with logo
+archey3
