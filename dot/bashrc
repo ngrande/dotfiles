@@ -12,8 +12,6 @@ cd
 # prevent history commands from executing by ! or !! but wait for execution by user
 shopt -s histverify
 
-# greeting
-archey3
 # notify user if restart necessary
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -146,3 +144,7 @@ HISTFILESIZE=100000
 PATH=$PATH:$HOME/projects/scripts
 PATH=$PATH:$HOME/.local/bin
 EDITOR=vim
+#GOPATH=~/projects
+
+# greeting
+archey3
