@@ -96,10 +96,15 @@ alias bur='sudo echo ""; echo "/ usage"; sudo btrfs filesystem usage / | grep -E
 
 # shell prompt colors
 # TRUE COLOR: 38;2;R;G;Bm (don't know what the 38;2; is for...)
-TRUE_COLOR="\e[38;2;255;3;160m"
-NO_GIT_COLOR="\e[38;2;255;135;200m"
-GIT_COLOR="\e[1;36m"
-NO_COLOR="\e[m"
+TRUE_COLOR="\[\e[38;2;255;3;160m\]"
+NO_GIT_COLOR="\[\e[38;2;255;135;200m\]"
+GIT_COLOR="\[\e[1;36m\]"
+GIT_CLEAN_COLOR="\[\e[38;2;140;225;11m\]"
+GIT_AHEAD_COLOR="\[\e[38;2;173;113;230m\]"
+GIT_BEHIND_COLOR="\[\e[33m\]"
+GIT_CHANGES_COLOR="\[\e[38;2;247;35;58m\]"
+GIT_DETACHED_COLOR="\[\e[1;31;46m\]"
+NO_COLOR="\[\e[m\]"
 
 function _git_prompt { 
 	local cwd="${NO_GIT_COLOR}\w${NO_COLOR}" 
@@ -117,31 +122,37 @@ function _git_prompt {
 		rela_dir="${rela_dir%/}" 
 		local repo_root="${PWD%$rela_dir}" 
 		[[ "$repo_root" =~ ^"$HOME"(/|$) ]] && repo_root="~${repo_root#$HOME}" 
+
 		cwd="${GIT_COLOR}${repo_root}${rela_dir}${NO_COLOR}" 
+
 		local pattern="^(# )?On branch ([^${IFS}]*)" 
 		if [[ ${git_status} =~ ${pattern} ]]; then 
 			local branch_name=${BASH_REMATCH[2]} 
 			local branch_color="" 
 			if [[ ${git_status} =~ (working (tree|directory) clean) ]]; then 
-				branch_color="\e[32m" 
+				branch_color=${GIT_CLEAN_COLOR}
 				if [[ ${git_status} =~ (Your branch is ahead) ]]; then 
-					branch_color="\e[35m" 
+					branch_color=${GIT_AHEAD_COLOR}
 				elif [[ "$(git log --all --not --remotes --tags --oneline)" ]]; then 
-					branch_color="\e[33m" 
+					branch_color=${GIT_BEHIND_COLOR}
 				fi
 			else
-				branch_color="\e[31m" 
+				branch_color=${GIT_CHANGES_COLOR}
 			fi
 			
-			branch="${TRUE_COLOR}[${NO_COLOR}\[$branch_color\]$branch_name\[\e[0m\]${TRUE_COLOR}]${NO_COLOR}" 
+			#branch="${TRUE_COLOR}[${NO_COLOR}\[$branch_color\]$branch_name\[${NO_COLOR}\]${TRUE_COLOR}]${NO_COLOR}" 
+			branch="${TRUE_COLOR}[${NO_COLOR}${branch_color}${branch_name}${NO_COLOR}${TRUE_COLOR}]${NO_COLOR}" 
 		fi
 		
 		if [[ ${git_status} =~ (HEAD detached) ]]; then 
-			branch="[\[\e[1;31;46m\]DETACHED HEAD\[\e[0m\]]" 
+			# branch="[\[\e[1;31;46m\]DETACHED HEAD\[\e[0m\]]" 
+			#branch="${TRUE_COLOR}[${NO_COLOR}\[${GIT_DETACHED_COLOR}\]DETACHED HEAD\[${NO_COLOR}\]${TRUE_COLOR}]${NO_COLOR}"
+			branch="${TRUE_COLOR}[${NO_COLOR}${GIT_DETACHED_COLOR}DETACHED HEAD${NO_COLOR}${TRUE_COLOR}]${NO_COLOR}"
 		fi
 	fi
 
 	# PS1="\[\e]0;\u@\h:\w\a\e[0m\]\u@\h:${cwd}${branch}\\$ "
+	#PS1="\[\e]0;\u@\h:\w\a\e[0m${TRUE_COLOR}\u@\h:${NO_COLOR}${cwd}${branch}${TRUE_COLOR}\$${NO_COLOR}\] "
 	PS1="\[\e]0;\u@\h:\w\a\e[0m\]${TRUE_COLOR}\u@\h:${NO_COLOR}${cwd}${branch}${TRUE_COLOR}\$${NO_COLOR} "
 } 
 
