@@ -9,6 +9,13 @@
 # prevent new terminals to open a new session in the same directory as another terminal is in
 cd
 
+# +++ ATTENTION +++
+# start tmux with every shell start
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+# +++++++++++++++++
+
 # prevent history commands from executing by ! or !! but wait for execution by user
 shopt -s histverify
 
