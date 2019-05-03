@@ -96,14 +96,15 @@ alias bur='sudo echo ""; echo "/ usage"; sudo btrfs filesystem usage / | grep -E
 
 # shell prompt colors
 # TRUE COLOR: 38;2;R;G;Bm (don't know what the 38;2; is for...)
-TRUE_COLOR="\[\e[38;2;255;3;160m\]"
-NO_GIT_COLOR="\[\e[38;2;255;135;200m\]"
-GIT_COLOR="\[\e[1;36m\]"
-GIT_CLEAN_COLOR="\[\e[38;2;140;225;11m\]"
-GIT_AHEAD_COLOR="\[\e[38;2;173;113;230m\]"
-GIT_BEHIND_COLOR="\[\e[33m\]"
-GIT_CHANGES_COLOR="\[\e[38;2;247;35;58m\]"
-GIT_DETACHED_COLOR="\[\e[1;31;46m\]"
+TRUE_COLOR="\[\e[38;2;255;3;160m\]" # PINK
+NO_GIT_COLOR="\[\e[38;2;255;135;200m\]" # light pink
+GIT_COLOR="\[\e[1;36m\]" # CYAN
+# USE COLOR PALETTE OF Tomorrow-Night vim scheme
+GIT_CLEAN_COLOR="\[\e[38;2;138;208;0m\]" # GREEN
+GIT_AHEAD_COLOR="\[\e[38;2;238;130;238m\]" # PURPLE
+GIT_BEHIND_COLOR="\[\e[38;2;253;151;32m\]" # ORANGE
+GIT_CHANGES_COLOR="\[\e[38;2;231;60;80m\]" # RED
+GIT_DETACHED_COLOR="\[\e[1;31;46m\]" # STRANGE BLUE / REVERSED
 NO_COLOR="\[\e[m\]"
 
 function _git_prompt { 
