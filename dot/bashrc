@@ -48,6 +48,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ls='ls -hrt --color=auto'
 alias ll='ls -Al'
+# force tmux to assume 256 color mode
+alias tmux='tmux -2'
 # this might cause some trouble
 alias python='bpython'
 # gcc output color
