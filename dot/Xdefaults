@@ -11,3 +11,7 @@ URxvt.cursorColor: cyan
 
 URxvt*depth: 32
 URxvt*background: [85]#000000
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
