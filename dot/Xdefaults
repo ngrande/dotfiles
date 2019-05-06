@@ -1,0 +1,13 @@
+*foreground: #ffffff
+*foreground_bold: #a8a19f
+*cursor: #a8a19f
+!*background: [80]#1b1918
+!!*background: rgba(0,0,0,.7)
+
+!URxvt.background: [75]#000000
+URxvt.font: xft:hack:size=9
+URxvt.scrollBar: false
+URxvt.cursorColor: cyan
+
+URxvt*depth: 32
+URxvt*background: [85]#000000
