@@ -11,6 +11,16 @@ do
 	ln -sf $file ~/$dot_name
 done
 
+echo "Installing .config files..."
+mkdir -p ~/.config
+for file in "$(pwd)/config"/*
+do
+	dirfile=$(basename $file)
+	echo "Creating symlink ~/.config/$dirfile -> $file"
+	read
+	ln -sf $file ~/.config/$dirfile
+done
+
 echo "Installing pacman hooks..."
 echo "This requires sudo!"
 echo "Confirm that you can read... [ENTER]"
