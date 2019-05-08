@@ -59,6 +59,12 @@ instance=Master
 interval=once
 signal=10
 
+[kernel_ver]
+label=KERNEL
+interval=600
+command=~/projects/scripts/kernel_status.sh
+color=#8ad000
+
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
@@ -89,7 +95,7 @@ interval=30
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #instance=wlan0
-color=#8ad000
+color=#7fff00
 interval=10
 separator=false
 
