@@ -28,9 +28,22 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[ticket_manager]
+interval=600
+label=TM
+command=~/projects/bitbucket/mdps-tool-who_is_ticketmanager/who_is_ticketmanager --i3 Grande
+color=#F92772
+
+[jira_issues]
+interval=30
+label=JIRA
+command=~/projects/bitbucket/mdps-tool-jira_automation/ticket_status.py --credentials=~/.jira_credentials --i3
+color=#66D9EF
+
 [audio_sink]
-interval=persist
-command=~/projects/scripts/switch_audio_out.sh $BLOCK_BUTTON
+interval=once
+label=SINK
+command=echo "$(~/projects/scripts/switch_audio_out.sh $BLOCK_BUTTON)"
 color=#E6DB74
 
 # Volume indicator
