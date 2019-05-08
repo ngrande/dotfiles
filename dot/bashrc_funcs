@@ -10,7 +10,7 @@ function cheat {
 	curl cheat.sh/$res
 }
 
-function _git_prompt {
+function git_prompt {
 
 	# shell prompt colors
 	# TRUE COLOR: 38;2;R;G;Bm (don't know what the 38;2; is for...)
