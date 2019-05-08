@@ -5,6 +5,10 @@ echo "Installing dot files..."
 for file in "$(pwd)/dot"/*
 do
 	dot_name=.$(basename $file)
+	if [ -L ~/$dot_name ]; then
+		echo "Symlink already exists ~/$dot_name"
+		continue
+	fi
 	echo "Creating symlink ~/$dot_name -> $file"
 	echo "Confirm with [ENTER]"
 	read
@@ -16,7 +20,8 @@ mkdir -p ~/.config
 for file in "$(pwd)/config"/*
 do
 	dirfile=$(basename $file)
-	if [ -d ~/.config/"$dirfile" ]; then
+	# check if is symlink with -L
+	if [ -L ~/.config/"$dirfile" ]; then
 		echo "Symlink already exists ~/.config/$dirfile"
 		continue
 	fi
@@ -30,6 +35,8 @@ echo "This requires sudo!"
 echo "Confirm that you can read... [ENTER]"
 read
 sudo mkdir -p /etc/pacman.d/hooks
+# here we want to copy, because having a symlink in a system wide path
+# to a user home directory is ugly as fu
 for hook in "$(pwd)/pacman/hooks"/*
 do
 	hook_name=$(basename $hook)
