@@ -34,12 +34,12 @@ for_window [class=".*"] border pixel 0
 for_window [class="Spotify"] move to workspace $ws2
 for_window [class="Slack"] move to workspace $ws2
 for_window [class="Evolution"] move to workspace $ws2
+for_window [class="Microsoft Teams"] move to workspace $ws2
+for_window [class="Whatsie"] move to workspace $ws2
 
 
-# Only enable gaps on a workspace when there is at least one container
-#smart_gaps on
-
-#smart_borders on
+# default gaps
+gaps inner 10
 
 bindsym $mod+i exec i3 gaps inner all plus 5
 bindsym $mod+shift+i exec i3 gaps inner all minus 5
@@ -209,19 +209,28 @@ bar {
          status_command i3blocks
 }
 
+# --no-startup-id:
+# The --no-startup-id parameter disables startup-notification support 
+# for this particular exec command. With startup-notification, 
+# i3 can make sure that a window appears on the workspace on 
+# which you used the exec command. Also, it will change the X11 
+# cursor to watch (a clock) while the application is launching.
+# So, if an application is not startup-notification aware (most GTK 
+# and Qt using applications seem to be, though), you will end up with 
+# a watch cursor for 60 seconds.
+
 # use xfce4 power management
-exec "--no-startup-id /usr/bin/xfce4-power-manager"
-# set default gaps
-gaps inner 10
+exec --no-startup-id /usr/bin/xfce4-power-manager
+
 # set wallpaper
-exec feh --randomize --bg-fill ~/Pictures/Wallpapers/*
+exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 
 # start compositor
 # to allow opacity for terminal etc.
-exec compton -b
+exec --no-startup-id compton -b
 
 # set keyboard layout
-exec "setxkbmap -layout de"
+exec --no-startup-id setxkbmap -layout de
 
 # start a termain
 exec $TERMINAL

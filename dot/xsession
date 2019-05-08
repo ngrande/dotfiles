@@ -1,0 +1,4 @@
+#!/bin/bash
+export TERMINAL=alacritty
+# call a script to set my monitors in right position!
+~/projects/scripts/xrandr_setup.sh
