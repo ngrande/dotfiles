@@ -27,12 +27,15 @@
 	template = ~/.git-template
 	verbose = true
 
+[diff]
+	wsErrorHighlight = all
+
 [alias]
 	st = status
 	co = checkout
 	comm = commit
 	comma = commit -a
-	diff = diff --ws-error-highlight=all
+#	diff = diff --ws-error-highlight=all
 	diffc = diff --cached
 	k = !gitk --all --date-order
 	desc = describe --always --tags --dirty
