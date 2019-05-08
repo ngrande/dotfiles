@@ -170,7 +170,6 @@ PATH=$PATH:$HOME/projects/scripts
 PATH=$PATH:$HOME/.local/bin
 export EDITOR=vim
 export PAGER=less
-export TERMINAL=alacritty
 
 # greeting with logo
 archey3
