@@ -246,6 +246,9 @@ exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 # to allow opacity for terminal etc.
 exec --no-startup-id compton -b
 
+# start an auto lock
+exec --no-startup-id xss-lock -- i3lock --color=000000
+
 # set keyboard layout
 exec --no-startup-id setxkbmap -layout de
 
