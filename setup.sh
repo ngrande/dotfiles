@@ -16,6 +16,10 @@ mkdir -p ~/.config
 for file in "$(pwd)/config"/*
 do
 	dirfile=$(basename $file)
+	if [ -d ~/.config/"$dirfile" ]; then
+		echo "Symlink already exists ~/.config/$dirfile"
+		continue
+	fi
 	echo "Creating symlink ~/.config/$dirfile -> $file"
 	read
 	ln -sf $file ~/.config/$dirfile
