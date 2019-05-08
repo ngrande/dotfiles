@@ -57,7 +57,7 @@ bindsym $mod+shift+o exec i3 gaps outer all minus 5
 floating_modifier $mod
 
 # lock screen
-bindsym $mod+l exec i3lock --image=/home/ngrande/Pictures/lock.jpg
+bindsym $mod+l exec i3lock --color=000000
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
