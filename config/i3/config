@@ -205,8 +205,25 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 #        status_command i3status
-         position top
-         status_command i3blocks
+	position top
+	status_command i3blocks
+	output primary
+	tray_output primary
+#	font -misc-fixed-medium-r-normal--13-120-75-57-C-70-iso10646-1
+#	font pango:hack 9
+	separator_symbol "|"
+}
+
+bar {
+	output HDMI1
+	output HDMI2
+	output HDMI3
+	output DP-0
+	output DP-1
+	output DP-2
+	output DP-3
+
+	position top
 }
 
 # --no-startup-id:
