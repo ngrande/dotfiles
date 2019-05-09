@@ -38,7 +38,7 @@ function git_prompt {
 	if [[ $? -eq 0 ]]; then 
 
 		local git_indicator=""
-		local git_url=$(git remote get-url origin)
+		local git_url=$(git remote get-url origin 2> /dev/null)
 		if [[ ${git_url} =~ (github.com/) ]]; then
 			git_indicator=" "
 		fi
