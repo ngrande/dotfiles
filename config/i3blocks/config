@@ -28,23 +28,25 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+# +++ WORK SPECIFIC +++
 [ticket_manager]
 interval=600
 label=TM
-command=~/projects/bitbucket/mdps-tool-who_is_ticketmanager/who_is_ticketmanager --i3 Grande
+command=~/projects/bitbucket/mdps-tool-who_is_ticketmanager/who_is_ticketmanager --i3 Grande; if [ "$BLOCK_BUTTON" == "1" ]; then ~/projects/bitbucket/mdps-tool-who_is_ticketmanager/who_is_ticketmanager --upcoming Grande | rofi -dmenu -lines 15 -p "Ticket Manager" -width 15 -hide-scrollbar; fi
 #color=#F92772
 color=#e73c50
 
 [jira_issues]
 interval=30
 label=JIRA
-command=~/projects/bitbucket/mdps-tool-jira_automation/ticket_status.py --credentials=~/.jira_credentials --i3
+command= if [ "$BLOCK_BUTTON" == "1" ]; then xdg-open https://jira.vwd.com; fi; ~/projects/bitbucket/mdps-tool-jira_automation/ticket_status.py --credentials=~/.jira_credentials --i3;
 color=#66D9EF
+# ++++++++++++++++++++++
 
 [kernel_ver]
 label=KERNEL
 interval=600
-command=~/projects/scripts/kernel_status.sh
+command=~/projects/scripts/i3blocks/kernel_status.sh; if [ "$BLOCK_BUTTON" == "1" ]; then echo -e "Repo: $(pacman -Si linux | grep -i version | awk '{print $3}')\nInst: $(pacman -Q linux | awk '{print $2}')\nCurr: $(uname -r)" | rofi -dmenu -lines 3 -width 9 -hide-scrollbar -p "Kernel"; fi
 color=#8ad000
 
 [audio_sink]
@@ -152,7 +154,7 @@ interval=30
 # Date Time
 #
 [time]
-command=date '+%Y-%m-%d %H:%M:%S'
+command=date '+%Y-%m-%d %H:%M:%S'; if [ "$BLOCK_BUTTON" == "1" ]; then cal | rofi -dmenu -lines 7 -p "Today - $(date +%d)" -width 9 -hide-scrollbar; fi;
 #color=#e73c50
 color=#F92772
 interval=5
