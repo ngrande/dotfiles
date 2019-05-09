@@ -44,14 +44,20 @@ color=#66D9EF
 # ++++++++++++++++++++++
 
 [kernel_ver]
-label=KERNEL
+#label=KERNEL
+label=
 interval=600
 command=~/projects/scripts/i3blocks/kernel_status.sh; if [ "$BLOCK_BUTTON" == "1" ]; then echo -e "Repo: $(pacman -Si linux | grep -i version | awk '{print $3}')\nInst: $(pacman -Q linux | awk '{print $2}')\nCurr: $(uname -r)" | rofi -dmenu -lines 3 -width 9 -hide-scrollbar -p "Kernel"; fi
 color=#8ad000
 
+[wallpaper]
+#full_text=WALLPAPER
+full_text=
+command=feh --bg-fill ~/Pictures/Wallpapers/$(ls ~/Pictures/Wallpapers/ | rofi -dmenu --lines 5 -p "Choose a wallpaper from ~/Pictures/Wallpapers/");
+
 [audio_sink]
 interval=once
-label=SINK
+label=
 command=echo "$(~/projects/scripts/switch_audio_out.sh $BLOCK_BUTTON)"
 color=#E6DB74
 
@@ -73,6 +79,7 @@ signal=10
 # This displays "ARTIST - SONG" if a music is playing.
 # Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
 [mediaplayer]
+label=
 instance=spotify
 interval=5
 signal=10
@@ -107,12 +114,14 @@ interval=30
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #instance=wlan0
+#label=
 color=#7fff00
 interval=10
 separator=false
 
 [wifi]
-#instance=wlp3s0
+instance=wlp3s0
+label=
 interval=10
 separator=false
 
@@ -125,7 +134,8 @@ interval=5
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=CPU
+#label=CPU
+label=
 interval=10
 min_width=CPU: 100.00%
 #separator=false
@@ -147,7 +157,8 @@ interval=10
 # The battery instance defaults to 0.
 [battery]
 #label=BAT
-label=⚡
+label=
+#label=⚡
 #instance=1
 interval=30
 
