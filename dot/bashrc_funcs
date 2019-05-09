@@ -29,15 +29,6 @@ function git_prompt {
 	local branch="" 
 	local git_status="" 
 
-	local git_indicator=""
-	local _pwd=$(pwd)
-	if [[ ${_pwd} =~ ((/home/[a-z]|$HOME)/projects/) ]]; then
-		git_indicator=" "
-	fi
-	if [[ ${_pwd} =~ ((/home/[a-z]|$HOME).*/bitbucket/) ]]; then
-		git_indicator=" "
-	fi
-
 	pwd | grep -E dev-linux[0-9]+ 1> /dev/null
 	if [[ $? -eq 0 ]]; then
 		return
@@ -45,6 +36,16 @@ function git_prompt {
 	
 	git_status="$(LANG=C git status 2> /dev/null)" 
 	if [[ $? -eq 0 ]]; then 
+
+		local git_indicator=""
+		local git_url=$(cat .git/config | grep url)
+		if [[ ${git_url} =~ (github.com/) ]]; then
+			git_indicator=" "
+		fi
+		if [[ ${_pwd} =~ (bitbucket.org/) ]]; then
+			git_indicator=" "
+		fi
+
 		local rela_dir="$(git rev-parse --show-prefix)" 
 		rela_dir="${rela_dir%/}" 
 		local repo_root="${PWD%$rela_dir}" 
@@ -80,5 +81,3 @@ function git_prompt {
 
 	PS1="\[\e]0;\u@\h:\w\a\e[0m\]${TRUE_COLOR}\u@\h:${NO_COLOR}${cwd}${branch}${TRUE_COLOR}\$${NO_COLOR} "
 } 
-
-if [[ "$(pwd)" =~ ($HOME/projects) ]]; then echo "TRUE"; fi
