@@ -165,6 +165,7 @@ interval=30
 # Date Time
 #
 [time]
+label=
 command=date '+%Y-%m-%d %H:%M:%S'; if [ "$BLOCK_BUTTON" == "1" ]; then cal | rofi -dmenu -lines 7 -p "Today - $(date +%d)" -width 9 -hide-scrollbar; fi;
 #color=#e73c50
 color=#F92772
