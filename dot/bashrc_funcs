@@ -29,6 +29,15 @@ function git_prompt {
 	local branch="" 
 	local git_status="" 
 
+	local git_indicator=""
+	local _pwd=$(pwd)
+	if [[ ${_pwd} =~ ((/home/[a-z]|$HOME)/projects/) ]]; then
+		git_indicator=" "
+	fi
+	if [[ ${_pwd} =~ ((/home/[a-z]|$HOME).*/bitbucket/) ]]; then
+		git_indicator=" "
+	fi
+
 	pwd | grep -E dev-linux[0-9]+ 1> /dev/null
 	if [[ $? -eq 0 ]]; then
 		return
@@ -59,18 +68,17 @@ function git_prompt {
 			fi
 			
 			#branch="${TRUE_COLOR}[${NO_COLOR}\[$branch_color\]$branch_name\[${NO_COLOR}\]${TRUE_COLOR}]${NO_COLOR}" 
-			branch="${TRUE_COLOR}[${NO_COLOR}${branch_color}${branch_name}${NO_COLOR}${TRUE_COLOR}]${NO_COLOR}" 
+			branch="${TRUE_COLOR}[${git_indicator}${NO_COLOR}${branch_color}${branch_name}${NO_COLOR}${TRUE_COLOR}]${NO_COLOR}" 
 		fi
-		
+
 		if [[ ${git_status} =~ (HEAD detached) ]]; then 
 			# branch="[\[\e[1;31;46m\]DETACHED HEAD\[\e[0m\]]" 
 			#branch="${TRUE_COLOR}[${NO_COLOR}\[${GIT_DETACHED_COLOR}\]DETACHED HEAD\[${NO_COLOR}\]${TRUE_COLOR}]${NO_COLOR}"
-			branch="${TRUE_COLOR}[${NO_COLOR}${GIT_DETACHED_COLOR}DETACHED HEAD${NO_COLOR}${TRUE_COLOR}]${NO_COLOR}"
+			branch="${TRUE_COLOR}[${git_indicator}${NO_COLOR}${GIT_DETACHED_COLOR}DETACHED HEAD${NO_COLOR}${TRUE_COLOR}]${NO_COLOR}"
 		fi
 	fi
 
-	# PS1="\[\e]0;\u@\h:\w\a\e[0m\]\u@\h:${cwd}${branch}\\$ "
-	#PS1="\[\e]0;\u@\h:\w\a\e[0m${TRUE_COLOR}\u@\h:${NO_COLOR}${cwd}${branch}${TRUE_COLOR}\$${NO_COLOR}\] "
 	PS1="\[\e]0;\u@\h:\w\a\e[0m\]${TRUE_COLOR}\u@\h:${NO_COLOR}${cwd}${branch}${TRUE_COLOR}\$${NO_COLOR} "
 } 
 
+if [[ "$(pwd)" =~ ($HOME/projects) ]]; then echo "TRUE"; fi
