@@ -56,9 +56,15 @@ full_text=
 command=feh --bg-fill ~/Pictures/Wallpapers/$(ls ~/Pictures/Wallpapers/ | rofi -dmenu -lines $(ls ~/Pictures/Wallpapers/ | wc --lines) -hide-scrollbar -width -50 -p "Choose a wallpaper from ~/Pictures/Wallpapers/");
 
 [audio_sink]
-interval=once
-label=
-command=echo "$(~/projects/scripts/switch_audio_out.sh $BLOCK_BUTTON)"
+#interval=once
+full_text=
+command=~/projects/scripts/i3blocks/switch_audio_out.sh &> /dev/null
+color=#E6DB74
+
+[audio_source]
+#interval=once
+full_text=
+command=~/projects/scripts/i3blocks/switch_mic_in.sh &> /dev/null
 color=#E6DB74
 
 # Volume indicator
