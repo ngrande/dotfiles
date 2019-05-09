@@ -30,6 +30,7 @@ set $mod Mod4
 
 # remove window titlebars to use gaps
 for_window [class=".*"] border pixel 0
+# for_window [class=".*"] border normal 1
 # set specific apps to specific workspaces
 for_window [class="Spotify"] move to workspace $ws2
 for_window [class="Slack"] move to workspace $ws2
@@ -230,6 +231,8 @@ bar {
 }
 
 bar {
+	tray_output primary
+
 	output HDMI1
 	output HDMI2
 	output HDMI3

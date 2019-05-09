@@ -32,7 +32,8 @@ markup=none
 interval=600
 label=TM
 command=~/projects/bitbucket/mdps-tool-who_is_ticketmanager/who_is_ticketmanager --i3 Grande
-color=#F92772
+#color=#F92772
+color=#e73c50
 
 [jira_issues]
 interval=30
@@ -152,7 +153,8 @@ interval=30
 #
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
-color=#e73c50
+#color=#e73c50
+color=#F92772
 interval=5
 
 # OpenVPN support
