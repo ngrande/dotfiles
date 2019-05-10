@@ -50,6 +50,10 @@ interval=600
 command=~/projects/scripts/i3blocks/kernel_status.sh
 color=#8ad000
 
+[key_bindings]
+full_text=
+command=~/projects/scripts/i3blocks/show_keybindings.sh &>/dev/null
+
 [wallpaper]
 #full_text=WALLPAPER
 full_text=
