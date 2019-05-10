@@ -32,14 +32,14 @@ markup=none
 [ticket_manager]
 interval=600
 label=TM
-command=~/projects/bitbucket/mdps-tool-who_is_ticketmanager/who_is_ticketmanager --i3 Grande; if [ "$BLOCK_BUTTON" == "1" ]; then ~/projects/bitbucket/mdps-tool-who_is_ticketmanager/who_is_ticketmanager --upcoming Grande | rofi -dmenu -lines 15 -p "Ticket Manager" -width 15 -hide-scrollbar; fi
+command=~/projects/bitbucket/ngrande/scripts/i3blocks/ticket_manager_status.sh
 #color=#F92772
 color=#e73c50
 
 [jira_issues]
 interval=30
 label=JIRA
-command= if [ "$BLOCK_BUTTON" == "1" ]; then xdg-open https://jira.vwd.com; fi; ~/projects/bitbucket/mdps-tool-jira_automation/ticket_status.py --credentials=~/.jira_credentials --i3;
+command=~/projects/bitbucket/ngrande/scripts/i3blocks/jira_status.sh
 color=#66D9EF
 # ++++++++++++++++++++++
 
