@@ -39,10 +39,10 @@ function git_prompt {
 
 		local git_indicator=""
 		local git_url=$(git remote get-url origin 2> /dev/null)
-		if [[ ${git_url} =~ (github.com/) ]]; then
+		if [[ ${git_url} =~ github.com/ ]]; then
 			git_indicator=" "
 		fi
-		if [[ ${_pwd} =~ (bitbucket.org/) ]]; then
+		if [[ ${git_url} =~ bitbucket.org/ ]]; then
 			git_indicator=" "
 		fi
 
