@@ -131,9 +131,15 @@ separator=false
 
 [wifi]
 instance=wlp3s0
-label=
+label=
 interval=10
 separator=false
+
+[wifi-menu]
+full_text=  
+command=rofi-wifi-menu
+separator=false
+color=#E6DB74
 
 [bandwidth]
 #instance=eth0
