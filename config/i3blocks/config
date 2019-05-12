@@ -195,6 +195,7 @@ label=
 command=~/projects/scripts/i3blocks/show_calendar.sh
 #color=#e73c50
 color=#F92772
+#color=#EE82EE
 interval=5
 
 # OpenVPN support

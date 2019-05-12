@@ -242,10 +242,10 @@ bar {
 		statusline #E8E8E3
 
 		# Type				border		background		text
-		focused_workspace	#2F2F2F		#8AD000			#2F2F2F
+		focused_workspace	#2F2F2F		#F92772			#2F2F2F
 		active_workspace	#2F2F2F		#E6DB74			#2F2F2F
-		inactive_workspace	#2F2F2F		#575b61			#8AD000
-		urgent_workspace	#2F2F2F		#E73C50			#2F2F2F
+		inactive_workspace	#2F2F2F		#575b61			#F92772
+		urgent_workspace	#E8E8E3		#E73C50			#E8E8E3
 	}
 }
 
