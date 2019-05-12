@@ -228,13 +228,25 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 #        status_command i3status
+#	mode dock
 	position top
 	status_command i3blocks
 	output primary
 	tray_output primary
 #	font -misc-fixed-medium-r-normal--13-120-75-57-C-70-iso10646-1
 #	font pango:hack 9
-	separator_symbol "|"
+	separator_symbol ""
+
+	colors {
+		background #2F2F2F
+		statusline #E8E8E3
+
+		# Type				border		background		text
+		focused_workspace	#2F2F2F		#8AD000			#2F2F2F
+		active_workspace	#2F2F2F		#E6DB74			#2F2F2F
+		inactive_workspace	#2F2F2F		#575b61			#8AD000
+		urgent_workspace	#2F2F2F		#E73C50			#2F2F2F
+	}
 }
 
 bar {
