@@ -62,10 +62,10 @@ floating_modifier $mod
 
 # function keys
 # Pulse Audio Control
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 up
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 down
-bindsym XF86AudioMute exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 mute
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink up
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink down
+bindsym XF86AudioMute exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink mute
+bindsym XF86AudioMicMute exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 11 source mute
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
 bindsym XF86AudioNext exec --no-startup-id playerctl next

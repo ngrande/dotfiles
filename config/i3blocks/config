@@ -69,25 +69,35 @@ command=~/projects/scripts/i3blocks/wallpaper_selection.sh ~/Pictures/Wallpapers
 full_text=
 command=~/projects/scripts/i3blocks/switch_audio_out.sh &> /dev/null
 color=#E6DB74
-
-[audio_source]
-#interval=once
-full_text=
-command=~/projects/scripts/i3blocks/switch_mic_in.sh &> /dev/null
-color=#E6DB74
+separator=false
 
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
-[volume]
+[sink_volume]
 #label=VOL
-label=♪
-instance=Master
+#label=♪
+#instance=Master
 #instance=PCM
+command=~/projects/scripts/i3blocks/change_volume.sh 10 sink show
 interval=once
 signal=10
+
+
+[audio_source]
+#interval=once
+full_text=
+command=~/projects/scripts/i3blocks/switch_mic_in.sh &> /dev/null
+color=#E6DB74
+separator=false
+
+[mic_volume]
+command=~/projects/scripts/i3blocks/change_volume.sh 11 source show
+interval=once
+signal=11
+
 
 # Generic media player support
 #
