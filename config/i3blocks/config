@@ -59,6 +59,11 @@ command=~/projects/scripts/i3blocks/show_keybindings.sh &>/dev/null
 full_text=
 command=~/projects/scripts/i3blocks/wallpaper_selection.sh ~/Pictures/Wallpapers
 
+#[screenshot]
+#full_text=
+#command=gnome-screenshot
+#color=#E6DB74
+
 [audio_sink]
 #interval=once
 full_text=
@@ -131,7 +136,7 @@ separator=false
 
 [wifi]
 instance=wlp3s0
-label=
+#label=
 interval=10
 separator=false
 
@@ -144,6 +149,11 @@ color=#E6DB74
 [bandwidth]
 #instance=eth0
 interval=5
+
+[gotop]
+full_text=
+command=i3-sensible-terminal -e gotop
+color=#E6DB74
 
 # CPU usage
 #

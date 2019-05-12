@@ -32,11 +32,11 @@ set $mod Mod4
 for_window [class=".*"] border pixel 0
 # for_window [class=".*"] border normal 1
 # set specific apps to specific workspaces
-for_window [class="Spotify"] move to workspace $ws2
-for_window [class="Slack"] move to workspace $ws2
-for_window [class="Evolution"] move to workspace $ws2
-for_window [class="Microsoft Teams"] move to workspace $ws2
-for_window [class="Whatsie"] move to workspace $ws2
+for_window [class="Spotify"] move to workspace $ws10
+for_window [class="Slack"] move to workspace $ws10
+for_window [class="Evolution"] move to workspace $ws10
+for_window [class="Microsoft Teams"] move to workspace $ws10
+for_window [class="Whatsie"] move to workspace $ws10
 
 
 # default gaps
