@@ -18,4 +18,4 @@ FIELDS=SSID,SECURITY,BARS,RATE
 
 #font
 #FONT="DejaVu Sans Mono 8"
-FONT="Hack 8"
+FONT="Hack 10"
