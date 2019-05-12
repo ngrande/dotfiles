@@ -47,6 +47,9 @@ bindsym $mod+shift+i exec i3 gaps inner all minus 5
 bindsym $mod+o exec i3 gaps outer all plus 5
 bindsym $mod+shift+o exec i3 gaps outer all minus 5
 
+# screenshot
+bindsym Print exec gnome-screenshot
+
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 #set $up l
