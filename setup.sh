@@ -12,10 +12,12 @@ do
 	echo "Creating symlink ~/$dot_name -> $file"
 	echo "Confirm with [ENTER]"
 	read
-	ln -sf $file ~/$dot_name
+	ln -sfT $file ~/$dot_name
 done
 
 echo "Installing .config files..."
+echo "in case a dir with the same name already exists
+a backup with suffix .bak will be created. No worries."
 mkdir -p ~/.config
 for file in "$(pwd)/config"/*
 do
@@ -24,6 +26,9 @@ do
 	if [ -L ~/.config/"$dirfile" ]; then
 		echo "Symlink already exists ~/.config/$dirfile"
 		continue
+	elif [ -d ~/.config/"$dirfile" ]; then
+		# create a backup of the existing file
+		mv ~/.config/"$dirfile" ~/.config/"${dirfile}.bak"
 	fi
 	echo "Creating symlink ~/.config/$dirfile -> $file"
 	read
