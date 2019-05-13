@@ -174,7 +174,7 @@ color=#E6DB74
 #label=CPU
 label=
 interval=10
-min_width=CPU: 100.00%
+min_width= 100.00%
 separator=false
 
 [load_average]
