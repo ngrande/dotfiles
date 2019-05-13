@@ -39,6 +39,8 @@ for_window [class="Microsoft Teams"] move to workspace $ws10
 for_window [class="Microsoft Teams for Linux"] move to workspace $ws10
 for_window [class="Whatsie"] move to workspace $ws10
 
+# set mouse warping off -> click link -> mouse jumps to firefox
+mouse_warping none
 
 # default gaps
 gaps inner 10
