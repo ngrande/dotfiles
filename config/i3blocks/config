@@ -48,7 +48,8 @@ color=#66D9EF
 label=
 interval=600
 command=~/projects/scripts/i3blocks/kernel_status.sh
-color=#8ad000
+#color=#8ad000
+color=#7fff00
 
 [key_bindings]
 full_text=
