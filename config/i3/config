@@ -36,6 +36,7 @@ for_window [class="Spotify"] move to workspace $ws10
 for_window [class="Slack"] move to workspace $ws10
 for_window [class="Evolution"] move to workspace $ws10
 for_window [class="Microsoft Teams"] move to workspace $ws10
+for_window [class="Microsoft Teams for Linux"] move to workspace $ws10
 for_window [class="Whatsie"] move to workspace $ws10
 
 
@@ -62,17 +63,24 @@ floating_modifier $mod
 
 # function keys
 # Pulse Audio Control
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink up
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink down
-bindsym XF86AudioMute exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink mute
-bindsym XF86AudioMicMute exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 11 source mute
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioStop exec --no-startup-id playerctl stop
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindSym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioRaiseVolume	exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink up
+bindsym XF86AudioLowerVolume	exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink down
+bindsym XF86AudioMute			exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink mute
+bindsym XF86AudioMicMute		exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 11 source mute
+bindsym XF86AudioPlay			exec --no-startup-id playerctl play-pause
+bindsym XF86AudioStop			exec --no-startup-id playerctl stop
+bindsym XF86AudioNext			exec --no-startup-id playerctl next
+bindSym XF86AudioPrev			exec --no-startup-id playerctl previous
+
+# cherry mx
+#bindcode 114 exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink up
+#bindcode 115 exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink down
+#bindcode 113 exec --no-startup-id ~/projects/scripts/i3blocks/change_volume.sh 10 sink mute
+
 ## PRO TIP ##
 # get all available key codes with:
 # xmodmap -pke
+# or use sudo evtest
 # ###########
 
 # lock screen
@@ -224,6 +232,33 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# COLORS
+set $bgcolor #2F2F2F
+set $textcolor #E8E8E3
+
+set $focused-bgcolor #F92772
+set $focused-text #575B61
+set $focused-border #2F2F2F
+
+set $active-bgcolor #8F908A
+set $active-text #2F2F2F
+set $active-border #2F2F2F
+
+set $inactive-bgcolor #575B61
+set $inactive-text #F92772
+set $inactive-border #2F2F2F
+
+set $urgent-bgcolor #E73C50
+set $urgent-text #E8E8E3
+set $urgent-border #2F2F2F
+
+# Window Colors
+client.focused          $focused-border   $focused-bgcolor   $focused-text
+client.focused_inactive $active-border    $active-bgcolor    $active-text
+client.unfocused        $inactive-border  $inactive-bgcolor  $inactive-text
+client.urgent           $urgent-border    $urgent-bgcolor    $urgent-text
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -238,14 +273,14 @@ bar {
 	separator_symbol ""
 
 	colors {
-		background #2F2F2F
-		statusline #E8E8E3
+		background $bgcolor
+		statusline $textcolor
 
-		# Type				border		background		text
-		focused_workspace	#2F2F2F		#F92772			#575b61
-		active_workspace	#2F2F2F		#E6DB74			#575b61
-		inactive_workspace	#2F2F2F		#575b61			#F92772
-		urgent_workspace	#E8E8E3		#E73C50			#E8E8E3
+		# Type              border            background         text
+		focused_workspace   $focused-border   $focused-bgcolor   $focused-text
+		active_workspace    $active-border    $active-bgcolor    $active-text
+		inactive_workspace  $inactive-border  $inactive-bgcolor  $inactive-text
+		urgent_workspace    $urgent-border    $urgent-bgcolor    $urgent-text
 	}
 }
 
@@ -261,6 +296,18 @@ bar {
 	output DP-3
 
 	position top
+
+	colors {
+		background $bgcolor
+		statusline $textcolor
+
+		# Type              border            background         text
+		focused_workspace   $focused-border   $focused-bgcolor   $focused-text
+		active_workspace    $active-border    $active-bgcolor    $active-text
+		inactive_workspace  $inactive-border  $inactive-bgcolor  $inactive-text
+		urgent_workspace    $urgent-border    $urgent-bgcolor    $urgent-text
+	}
+
 }
 
 # --no-startup-id:
