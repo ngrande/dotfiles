@@ -39,7 +39,10 @@ echo "Installing pacman hooks..."
 echo "This requires sudo!"
 echo "Confirm that you can read... [ENTER]"
 read
-sudo mkdir -p /etc/pacman.d/hooks
+if ! [ -d /etc/pacman.d/hooks ];
+then
+	sudo mkdir -p /etc/pacman.d/hooks
+fi
 # here we want to copy, because having a symlink in a system wide path
 # to a user home directory is ugly as fu
 for hook in "$(pwd)/pacman/hooks"/*
