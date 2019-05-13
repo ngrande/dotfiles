@@ -49,7 +49,7 @@ bindsym $mod+o exec i3 gaps outer all plus 5
 bindsym $mod+shift+o exec i3 gaps outer all minus 5
 
 # screenshot
-bindsym Print exec gnome-screenshot
+bindsym Print exec --no-startup-id gnome-screenshot
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -236,7 +236,8 @@ bindsym $mod+r mode "resize"
 set $bgcolor #2F2F2F
 set $textcolor #E8E8E3
 
-set $focused-bgcolor #F92772
+#set $focused-bgcolor #F92772
+set $focused-bgcolor #E6DB74
 set $focused-text #575B61
 set $focused-border #2F2F2F
 
@@ -245,7 +246,8 @@ set $active-text #2F2F2F
 set $active-border #2F2F2F
 
 set $inactive-bgcolor #575B61
-set $inactive-text #F92772
+#set $inactive-text #F92772
+set $inactive-text #E6DB74
 set $inactive-border #2F2F2F
 
 set $urgent-bgcolor #E73C50
@@ -337,4 +339,4 @@ exec --no-startup-id xss-lock -- i3lock --color=000000
 exec --no-startup-id setxkbmap -layout de
 
 # start a termain
-exec $TERMINAL
+exec --no-startup-id $TERMINAL
