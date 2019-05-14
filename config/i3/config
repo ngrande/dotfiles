@@ -265,11 +265,19 @@ set $urgent-bgcolor #E73C50
 set $urgent-text #E8E8E3
 set $urgent-border #2F2F2F
 
-# Window Colors
-client.focused          $focused-border   $focused-bgcolor   $focused-text
+# pink
+set $indicator #F92772
+# yellow
+#set $indicator #E6DB74
+# cyan
+#set $indicator #66D9EF
+
+# Window Colors         border            background         text           indicator       child_border
+client.focused          $focused-border   $focused-bgcolor   $focused-text  $indicator
 client.focused_inactive $active-border    $active-bgcolor    $active-text
 client.unfocused        $inactive-border  $inactive-bgcolor  $inactive-text
 client.urgent           $urgent-border    $urgent-bgcolor    $urgent-text
+client.placeholder      #000000           #0c0c0c #ffffff #000000   #0c0c0c
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
