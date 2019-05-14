@@ -68,7 +68,7 @@ command=~/projects/scripts/i3blocks/wallpaper_selection.sh ~/Pictures/Wallpapers
 [audio_sink]
 #interval=once
 full_text=
-command=~/projects/scripts/i3blocks/switch_audio_out.sh &> /dev/null
+command=~/projects/scripts/i3blocks/switch_audio.sh sink &> /dev/null
 color=#E6DB74
 separator=false
 
@@ -90,7 +90,7 @@ signal=10
 [audio_source]
 #interval=once
 full_text=
-command=~/projects/scripts/i3blocks/switch_mic_in.sh &> /dev/null
+command=~/projects/scripts/i3blocks/switch_audio.sh source &> /dev/null
 color=#E6DB74
 separator=false
 

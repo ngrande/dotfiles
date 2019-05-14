@@ -10,7 +10,8 @@ rofi.color-window: argb:cc000000,  #F92772, argb:ccE8E8E3
 !   State:              'bg',       'fg',   'altbg',        'hlbg',         hlfg
 rofi.color-normal: argb:00252936, #E8E8E3, argb:00252936,    #F92772,    #000000
 rofi.color-active: argb:00252936, #7fff00, argb:00252936,    #7fff00,     #000000
-rofi.color-urgent: argb:00252936, #ff3334, argb:00252936, argb:00252936, #ff0000
+!rofi.color-urgent: argb:00252936, #E73C50, argb:00252936,    #E73C50,   #E8E8E3
+rofi.color-urgent:       #E73C50, #E8E8E3, #E73C50,    #E8E8E3,    #E73C50
 
 !rofi.color-normal: argb:00252936, #E8E8E3, argb:00252936,    #F92772,    #000000
 !rofi.color-active: argb:00252936, #EE82EE, argb:00252936,   #EE82EE,     #000000
