@@ -115,12 +115,14 @@ signal=10
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 label=MEM
+command=~/projects/scripts/i3blocks/memory.sh MEM
 separator=false
 interval=30
 
 [memory]
 label=SWAP
-instance=swap
+command=~/projects/scripts/i3blocks/memory.sh SWAP
+#instance=swap
 separator=false
 interval=30
 
