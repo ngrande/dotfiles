@@ -29,7 +29,7 @@ font pango:hack, fontawesome 9
 set $mod Mod4
 
 # remove window titlebars to use gaps
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 2
 # for_window [class=".*"] border normal 1
 # set specific apps to specific workspaces
 for_window [class="Spotify"] move to workspace $ws10
@@ -38,6 +38,9 @@ for_window [class="Evolution"] move to workspace $ws10
 for_window [class="Microsoft Teams"] move to workspace $ws10
 for_window [class="Microsoft Teams for Linux"] move to workspace $ws10
 for_window [class="Whatsie"] move to workspace $ws10
+
+# toggle container / window titlebars
+bindsym $mod+t border toggle
 
 # set mouse warping off -> click link -> mouse jumps to firefox
 mouse_warping none
