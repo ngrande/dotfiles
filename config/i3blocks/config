@@ -48,8 +48,8 @@ color=#66D9EF
 label=
 interval=600
 command=~/projects/scripts/i3blocks/kernel_status.sh
-#color=#8ad000
-color=#7fff00
+color=#8ad000
+#color=#7fff00
 
 [key_bindings]
 full_text=
@@ -143,7 +143,8 @@ interval=30
 [iface]
 #instance=wlan0
 #label=
-color=#7fff00
+#color=#7fff00
+color=#FF6347
 interval=10
 separator=false
 
@@ -210,7 +211,8 @@ interval=30
 label=
 command=~/projects/scripts/i3blocks/show_calendar.sh
 #color=#e73c50
-color=#F92772
+#color=#F92772
+color=#E6DB74
 #color=#EE82EE
 interval=5
 

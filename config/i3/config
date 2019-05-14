@@ -244,8 +244,8 @@ set $textcolor #E8E8E3
 # pink
 #set $focused-bgcolor #F92772
 # yellow
-#set $focused-bgcolor #E6DB74
-set $focused-bgcolor #7fff00
+set $focused-bgcolor #E6DB74
+#set $focused-bgcolor #7fff00
 set $focused-text #575B61
 set $focused-border #2F2F2F
 
@@ -257,8 +257,8 @@ set $inactive-bgcolor #575B61
 # pink
 #set $inactive-text #F92772
 # yellow
-#set $inactive-text #E6DB74
-set $inactive-text #7fff00
+set $inactive-text #E6DB74
+#set $inactive-text #7fff00
 set $inactive-border #2F2F2F
 
 set $urgent-bgcolor #E73C50
@@ -266,7 +266,9 @@ set $urgent-text #E8E8E3
 set $urgent-border #2F2F2F
 
 # pink
-set $indicator #F92772
+#set $indicator #F92772
+# tomato
+set $indicator #FF6347
 # yellow
 #set $indicator #E6DB74
 # cyan

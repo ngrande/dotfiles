@@ -14,9 +14,12 @@ function git_prompt {
 
 	# shell prompt colors
 	# TRUE COLOR: 38;2;R;G;Bm (don't know what the 38;2; is for...)
-	TRUE_COLOR="\[\e[38;2;255;3;160m\]" # PINK
-	NO_GIT_COLOR="\[\e[38;2;255;135;200m\]" # light pink
-	GIT_COLOR="\[\e[1;36m\]" # CYAN
+#	TRUE_COLOR="\[\e[38;2;255;3;160m\]" # PINK
+	NO_GIT_COLOR="\[\e[38;2;249;39;114m\]" # RED
+#	NO_GIT_COLOR="\[\e[38;2;255;135;200m\]" # light pink
+	GIT_COLOR="\[\e[38;2;255;99;71m\]" # tomato
+#	GIT_COLOR="\[\e[1;36m\]" # CYAN
+	TRUE_COLOR="\[\e[38;2;230;219;116m\]" # yellow
 	# USE COLOR PALETTE OF Tomorrow-Night vim scheme
 	GIT_CLEAN_COLOR="\[\e[38;2;127;255;0m\]" # GREEN
 	GIT_AHEAD_COLOR="\[\e[38;2;238;130;238m\]" # PURPLE

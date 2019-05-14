@@ -181,7 +181,8 @@ colors:
   #
   # Colors which should be used to draw the terminal cursor. If these are unset,
   cursor:
-    cursor: '0xF92772'
+    cursor: '0xFF6347'
+#    cursor: '0xF92772'
     text: '0xffffff'
   
   # Selection colors
