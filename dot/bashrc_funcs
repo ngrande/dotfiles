@@ -21,7 +21,7 @@ function git_prompt {
 #	GIT_COLOR="\[\e[1;36m\]" # CYAN
 	TRUE_COLOR="\[\e[38;2;230;219;116m\]" # yellow
 	# USE COLOR PALETTE OF Tomorrow-Night vim scheme
-	GIT_CLEAN_COLOR="\[\e[38;2;127;255;0m\]" # GREEN
+	GIT_CLEAN_COLOR="\[\e[38;2;138;208;0m\]" # GREEN
 	GIT_AHEAD_COLOR="\[\e[38;2;238;130;238m\]" # PURPLE
 	GIT_BEHIND_COLOR="\[\e[38;2;253;151;32m\]" # ORANGE
 	GIT_CHANGES_COLOR="\[\e[38;2;249;39;114m\]" # RED
