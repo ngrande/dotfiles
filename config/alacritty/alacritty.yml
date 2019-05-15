@@ -183,7 +183,8 @@ colors:
   cursor:
     cursor: '0xFF6347'
 #    cursor: '0xF92772'
-    text: '0xEAEAEA'
+#text: '0xEAEAEA'
+    text: '0x2F2F2F'
   
   # Selection colors
   #
