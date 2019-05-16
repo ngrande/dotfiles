@@ -10,6 +10,10 @@
 [credential "https://github.com"]
 	username = n.grande@outlook.com
 
+[vwdgit]
+	# vwdgit wrapper specific option
+	quiet = false
+
 [push]
 	default = simple
 
