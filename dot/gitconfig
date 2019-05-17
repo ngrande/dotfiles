@@ -13,6 +13,9 @@
 [vwdgit]
 	# vwdgit wrapper specific option
 	quiet = false
+#	quiet = true
+#	color = false
+	color = true
 
 [push]
 	default = simple
