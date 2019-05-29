@@ -22,24 +22,6 @@ shopt -s histverify
 # notify user if restart necessary
 bold=$(tput bold)
 normal=$(tput sgr0)
-# get the version part (like "5.0")
-uname_r=$(uname -r | awk -F - '{print $1}')
-kernel_vers=$(echo $uname_r | awk -F . '{print $1"."$2}')
-if [ ${#uname_r} -gt 4 ]; then
-	# append patch version (like "5.0.3")
-	kernel_vers=$kernel_vers"."$(echo $uname_r | awk -F . '{print $3}')
-fi
-
-# get the rel part (like "arch1-1")
-kernel_rel=$(uname -r | awk -F - '{print $2"-"$3}')
-# combine both to compare to package name (like "5.0.arch1-1")
-installed=$(pacman -Q linux | awk '{print $2}')
-
-active=("$kernel_vers.$kernel_rel")
-
-if [ $active != $installed ]; then
-	echo "${bold}you have a newer kernel version installed ($installed) - please restart your machine${normal}"
-fi
 
 # after greeting include additional file with commands (won't be commited)
 if [ -f $HOME/.bash_ext ]; then
