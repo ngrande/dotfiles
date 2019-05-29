@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function cheat {
 	# call cheat.sh and get some tips
@@ -28,7 +28,7 @@ function git_prompt {
 	GIT_DETACHED_COLOR="\[\e[48;2;249;39;114m\]" # BACKGROUND RED
 	NO_COLOR="\[\e[m\]"
 
-	local cwd="${NO_GIT_COLOR}\w${NO_COLOR}" 
+	local cwd="${NO_GIT_COLOR}\W${NO_COLOR}" 
 	local branch="" 
 	local git_status="" 
 
@@ -49,12 +49,17 @@ function git_prompt {
 			git_indicator=" "
 		fi
 
-		local rela_dir="$(git rev-parse --show-prefix)" 
-		rela_dir="${rela_dir%/}" 
-		local repo_root="${PWD%$rela_dir}" 
-		[[ "$repo_root" =~ ^"$HOME"(/|$) ]] && repo_root="~${repo_root#$HOME}" 
+#		local rela_dir="$(git rev-parse --show-prefix)" 
+#		rela_dir="${rela_dir%/}" 
+#		local repo_root="${PWD%$rela_dir}" 
+#		[[ "$repo_root" =~ ^"$HOME"(/|$) ]] && repo_root="~${repo_root#$HOME}" 
 
-		cwd="${GIT_COLOR}${repo_root}${rela_dir}${NO_COLOR}" 
+		#cwd="${GIT_COLOR}${repo_root}${rela_dir}${NO_COLOR}" 
+		local repodir=$(basename $(git rev-parse --show-toplevel))
+		local repo_depth=$(git rev-parse --show-cdup | cut -c 3-)
+		local cur_dir_base=$(basename ${PWD})
+		cur_dir_base="${cur_dir_base%$repodir}"
+		cwd="${GIT_COLOR}${repodir}${repo_depth}${cur_dir_base}${NO_COLOR}" 
 
 		local pattern="^(# )?On branch ([^${IFS}]*)" 
 		if [[ ${git_status} =~ ${pattern} ]]; then 
@@ -82,5 +87,5 @@ function git_prompt {
 		fi
 	fi
 
-	PS1="\[\e]0;\u@\h:\w\a\e[0m\]${TRUE_COLOR}\u@\h:${NO_COLOR}${cwd}${branch}${TRUE_COLOR}\$${NO_COLOR} "
+	PS1="${TRUE_COLOR}\u@\h:${NO_COLOR}${cwd}${branch}${TRUE_COLOR}\$${NO_COLOR} "
 } 
