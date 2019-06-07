@@ -49,17 +49,20 @@ function git_prompt {
 			git_indicator=" "
 		fi
 
-#		local rela_dir="$(git rev-parse --show-prefix)" 
-#		rela_dir="${rela_dir%/}" 
-#		local repo_root="${PWD%$rela_dir}" 
-#		[[ "$repo_root" =~ ^"$HOME"(/|$) ]] && repo_root="~${repo_root#$HOME}" 
-
-		#cwd="${GIT_COLOR}${repo_root}${rela_dir}${NO_COLOR}" 
-		local repodir=$(basename $(git rev-parse --show-toplevel))
+		# The following line result in a path to display which is the {reponame}{depth}{cur basename}
+		# like: mdps-server-keycache/../mdps
+		local repo_path=$(git rev-parse --show-toplevel)
+		local repo_name=$(basename $repo_path)
 		local repo_depth=$(git rev-parse --show-cdup | cut -c 3-)
 		local cur_dir_base=$(basename ${PWD})
-		cur_dir_base="${cur_dir_base%$repodir}"
-		cwd="${GIT_COLOR}${repodir}${repo_depth}${cur_dir_base}${NO_COLOR}" 
+		cur_dir_base="${cur_dir_base%$reponame}"
+
+		# workaround if using symlinks for repository
+		if [ "${repo_path%$repo_name}" == "${PWD%$(basename ${PWD})}" ]; then
+			cur_dir_base=""
+		fi
+
+		cwd="${GIT_COLOR}${repo_name}${repo_depth}${cur_dir_base}${NO_COLOR}" 
 
 		local pattern="^(# )?On branch ([^${IFS}]*)" 
 		if [[ ${git_status} =~ ${pattern} ]]; then 
