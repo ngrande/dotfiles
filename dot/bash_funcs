@@ -26,7 +26,7 @@ function git_prompt {
 	GIT_BEHIND_COLOR="\[\e[38;2;253;151;32m\]" # ORANGE
 	GIT_CHANGES_COLOR="\[\e[38;2;249;39;114m\]" # RED
 	GIT_DETACHED_COLOR="\[\e[48;2;249;39;114m\]" # BACKGROUND RED
-	NO_COLOR="\[\e[m\]"
+	NO_COLOR="\[\e[0m\]"
 
 	local cwd="${NO_GIT_COLOR}\W${NO_COLOR}" 
 	local branch="" 
