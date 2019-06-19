@@ -90,5 +90,6 @@ function git_prompt {
 		fi
 	fi
 
-	PS1="${TRUE_COLOR}\u@\h:${NO_COLOR}${cwd}${branch}${TRUE_COLOR}\$${NO_COLOR} "
+#	PS1="${TRUE_COLOR}\u@\h:${NO_COLOR}${cwd}${branch}${TRUE_COLOR}\$${NO_COLOR} "
+	PS1="${TRUE_COLOR}${NO_COLOR}${cwd}${branch}${TRUE_COLOR}\$${NO_COLOR} "
 } 
