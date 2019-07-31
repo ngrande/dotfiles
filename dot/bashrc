@@ -94,5 +94,8 @@ PATH=$PATH:$HOME/.local/bin
 export EDITOR=vim
 export PAGER=less
 
+# Make flags
+export MAKEFLAGS="-j$(grep -c ^processor /proc/cpuinfo)"
+
 # greeting with logo
 archey3
