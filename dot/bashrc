@@ -72,7 +72,7 @@ man() {
 
 # pacman and aur helper
 alias paorph='yay -Rns $(yay -Qdtq) '
-alias paup='yay -Syu --ignore linux '
+alias paup='yay -Syu '
 
 # btrfs
 #alias buh='sudo btrfs filesystem usage /home'

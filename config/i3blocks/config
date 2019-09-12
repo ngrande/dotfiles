@@ -109,6 +109,7 @@ label=
 instance=spotify
 interval=5
 signal=10
+command=$SCRIPT_DIR/mediaplayer/mediaplayer
 
 # Memory usage
 #
@@ -134,6 +135,7 @@ interval=30
 [disk]
 label=~
 #instance=/mnt/data
+command=$SCRIPT_DIR/disk/disk
 interval=30
 
 # Network interface monitoring
@@ -147,12 +149,14 @@ interval=30
 color=#FF6347
 interval=10
 separator=false
+command=$SCRIPT_DIR/iface/iface
 
 [wifi]
 instance=wlp3s0
 #label=
 interval=10
 separator=false
+command=$SCRIPT_DIR/wifi/wifi
 
 [wifi-menu]
 full_text=  
@@ -163,6 +167,7 @@ color=#E6DB74
 [bandwidth]
 #instance=eth0
 interval=5
+command=$SCRIPT_DIR/bandwidth/bandwidth
 
 [gotop]
 full_text=
@@ -179,10 +184,12 @@ label=
 interval=10
 min_width= 100.00%
 separator=false
+command=$SCRIPT_DIR/cpu_usage/cpu_usage
 
 [load_average]
 interval=10
 separator=false
+command=$SCRIPT_DIR/load_average/load_average
 
 # Temperature
 #
@@ -193,6 +200,7 @@ separator=false
 #label=TEMP
 label=
 interval=10
+command=$SCRIPT_DIR/temperature/temperature
 
 # Battery indicator
 #
