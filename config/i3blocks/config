@@ -29,23 +29,35 @@ separator_block_width=15
 markup=none
 
 # +++ WORK SPECIFIC +++
+[train_city]
+interval=60
+label=CITY 
+command=~/projects/scripts_vwd/rmv-terminal.sh Hauptwache
+color=#E6DB74
+
+[train_home]
+interval=60
+label=HOME 
+command=~/projects/scripts_vwd/rmv-terminal.sh Eschersheim
+color=#E6DB74
+
 [ticket_manager]
 interval=600
-label=TM
+label=TM: 
 command=~/projects/bitbucket/ngrande/scripts/i3blocks/ticket_manager_status.sh
 #color=#F92772
 color=#e73c50
 
 [jira_issues]
 interval=30
-label=JIRA
+label=JIRA: 
 command=~/projects/bitbucket/ngrande/scripts/i3blocks/jira_status.sh
 color=#66D9EF
 # ++++++++++++++++++++++
 
 [kernel_ver]
 #label=KERNEL
-label=
+label=: 
 interval=600
 command=~/projects/scripts/i3blocks/kernel_status.sh
 color=#8ad000
