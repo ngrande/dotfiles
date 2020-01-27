@@ -32,13 +32,13 @@ markup=none
 [train_city]
 interval=60
 label=CITY 
-command=~/projects/scripts_vwd/rmv-terminal.sh Hauptwache
+command=~/projects/bitbucket/ngrande/scripts/i3blocks/rmv-terminal.sh Hauptwache
 color=#E6DB74
 
 [train_home]
 interval=60
 label=HOME 
-command=~/projects/scripts_vwd/rmv-terminal.sh Eschersheim
+command=~/projects/bitbucket/ngrande/scripts/i3blocks/rmv-terminal.sh Eschersheim
 color=#E6DB74
 
 [ticket_manager]
