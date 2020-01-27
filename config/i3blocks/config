@@ -48,11 +48,12 @@ command=~/projects/bitbucket/ngrande/scripts/i3blocks/ticket_manager_status.sh
 #color=#F92772
 color=#e73c50
 
-[jira_issues]
-interval=30
-label=JIRA: 
-command=~/projects/bitbucket/ngrande/scripts/i3blocks/jira_status.sh
-color=#66D9EF
+# temporarily not availble due to OAuth2
+#[jira_issues]
+#interval=30
+#label=JIRA: 
+#command=~/projects/bitbucket/ngrande/scripts/i3blocks/jira_status.sh
+#color=#66D9EF
 # ++++++++++++++++++++++
 
 [kernel_ver]
@@ -117,7 +118,7 @@ signal=11
 # This displays "ARTIST - SONG" if a music is playing.
 # Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
 [mediaplayer]
-label=
+label= 
 instance=spotify
 interval=5
 signal=10
@@ -127,13 +128,13 @@ command=$SCRIPT_DIR/mediaplayer/mediaplayer
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
+label=MEM 
 command=~/projects/scripts/i3blocks/memory.sh MEM %
 separator=false
 interval=30
 
 [memory]
-label=SWAP
+label=SWAP 
 command=~/projects/scripts/i3blocks/memory.sh SWAP %
 #instance=swap
 separator=false
@@ -145,7 +146,7 @@ interval=30
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=~
+label=~ 
 #instance=/mnt/data
 command=$SCRIPT_DIR/disk/disk
 interval=30
@@ -192,7 +193,7 @@ color=#E6DB74
 # see the script for details.
 [cpu_usage]
 #label=CPU
-label=
+label= 
 interval=10
 min_width= 100.00%
 separator=false
@@ -210,7 +211,7 @@ command=$SCRIPT_DIR/load_average/load_average
 # see the script for details.
 [temperature]
 #label=TEMP
-label=
+label= 
 interval=10
 command=$SCRIPT_DIR/temperature/temperature
 
@@ -228,7 +229,7 @@ interval=30
 # Date Time
 #
 [time]
-label=
+label= 
 command=~/projects/scripts/i3blocks/show_calendar.sh
 #color=#e73c50
 #color=#F92772
