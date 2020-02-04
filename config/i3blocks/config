@@ -32,12 +32,14 @@ markup=none
 [train_city]
 interval=60
 label=CITY 
+min_width=CITY S9: 99m
 command=~/projects/bitbucket/ngrande/scripts/i3blocks/rmv-terminal.sh Hauptwache
 color=#E6DB74
 
 [train_home]
 interval=60
 label=HOME 
+min_width=HOME S9: 99m
 command=~/projects/bitbucket/ngrande/scripts/i3blocks/rmv-terminal.sh Eschersheim
 color=#E6DB74
 
