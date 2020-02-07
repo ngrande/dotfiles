@@ -50,12 +50,11 @@ command=~/projects/bitbucket/ngrande/scripts/i3blocks/ticket_manager_status.sh
 #color=#F92772
 color=#e73c50
 
-# temporarily not availble due to OAuth2
-#[jira_issues]
-#interval=30
-#label=JIRA: 
-#command=~/projects/bitbucket/ngrande/scripts/i3blocks/jira_status.sh
-#color=#66D9EF
+[jira_issues]
+interval=30
+label=JIRA: 
+command=~/projects/bitbucket/ngrande/scripts/i3blocks/jira_status.sh
+color=#66D9EF
 # ++++++++++++++++++++++
 
 [kernel_ver]
