@@ -36,6 +36,7 @@
 
 [diff]
 	wsErrorHighlight = all
+	tool = vimdiff
 
 [alias]
 	st = status
