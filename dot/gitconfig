@@ -16,6 +16,7 @@
 #	quiet = true
 #	color = false
 	color = true
+	useSSH = true
 
 [push]
 	default = simple
