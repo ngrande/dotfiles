@@ -98,4 +98,4 @@ export PAGER=less
 export MAKEFLAGS="-j$(grep -c ^processor /proc/cpuinfo)"
 
 # greeting with logo
-archey3
+#archey3

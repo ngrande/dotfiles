@@ -1,0 +1,35 @@
+# install from https://github.com/plasmahh/vdb
+source /usr/bin/vdb.py
+vdb start
+
+# some settings
+set print vtbl on
+set print asm-demangle on
+set print union on
+set print null-stop
+set print address on
+set print static off
+set print static-members off
+set print pretty on
+set print array on
+set history save
+
+define context
+    printf "_______________________________________"
+    printf "________________________________________\n"
+    reg
+    #info reg
+    #eflags
+    printf "[%04X:%16lX]------------------------", $ss, $return
+    printf "---------------------------------[stack]\n"
+    hd $rsp $rbp-$rsp
+    printf "[%04X:%16lX]------------------------", $cs, $return
+    printf "---------------------------------[ code]\n"
+    disx
+#    x /10i $pc
+    printf "---------------------------------------"
+    printf "---------------------------------------\n"
+end
+document context
+    Print regs, stack, ds:esi, and disassemble cs:eip
+end
