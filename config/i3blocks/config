@@ -28,6 +28,10 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[monitor_setup]
+full_text= 
+command=~/projects/bitbucket/ngrande/scripts/i3blocks/xrandr_setup.sh
+
 # +++ WORK SPECIFIC +++
 [train_city]
 interval=60
