@@ -152,6 +152,12 @@ label=~
 command=$SCRIPT_DIR/disk/disk
 interval=30
 
+[ovpn]
+label=OVPN 
+interval=60
+command=~/projects/scripts/i3blocks/openvpn.sh
+color=#FF6347
+
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
@@ -241,8 +247,8 @@ interval=5
 # OpenVPN support
 #
 # Support multiple VPN, with colors.
-[openvpn]
-interval=20
+#[openvpn]
+#interval=20
 
 # Key indicators
 #
