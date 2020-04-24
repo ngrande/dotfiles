@@ -362,7 +362,7 @@ exec --no-startup-id ~/projects/scripts/i3blocks/wallpaper_selection.sh
 
 # start compositor
 # to allow opacity for terminal etc.
-exec --no-startup-id compton -b --vsync
+exec --no-startup-id picom -b --vsync
 
 # start an auto lock
 exec --no-startup-id xss-lock -- i3lock --color=000000
