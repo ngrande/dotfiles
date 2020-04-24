@@ -30,8 +30,7 @@ markup=none
 
 [monitor_setup]
 full_text= 
-interval=30
-command=~/projects/bitbucket/ngrande/scripts/i3blocks/xrandr_setup.sh
+command=~/projects/scripts/xrandr_setup.sh
 
 # +++ WORK SPECIFIC +++
 [train_city]
