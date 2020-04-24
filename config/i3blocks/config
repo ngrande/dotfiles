@@ -224,7 +224,7 @@ command=$SCRIPT_DIR/load_average/load_average
 #label=TEMP
 label= 
 interval=10
-command=$SCRIPT_DIR/temperature/temperature
+command=$SCRIPT_DIR/temperature/temperature --chip coretemp-isa-0000
 
 # Battery indicator
 #
