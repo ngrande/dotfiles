@@ -46,7 +46,7 @@ alias tmux='tmux -2'
 # this might cause some trouble
 alias python='bpython'
 # gcc output color
-export GCC_COLORS='error=01;31:warning=01;33:note=01;35:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;33:note=01;34:caret=01;32:locus=01:quote=01'
 # less colorized
 export LESS=-RS
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
