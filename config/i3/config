@@ -368,7 +368,7 @@ exec --no-startup-id picom -b --vsync
 exec --no-startup-id xss-lock -- i3lock --color=000000
 
 # set keyboard layout
-exec --no-startup-id setxkbmap -layout de
+# exec --no-startup-id setxkbmap -layout de
 
 exec srandrd ~/projects/scripts/xrandr_setup.sh
 
