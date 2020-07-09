@@ -23,7 +23,7 @@
 
 [core]
 	pager = less -SMFRX
-		excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
 
 [log]
 	date = iso-local
