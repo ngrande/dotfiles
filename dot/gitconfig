@@ -56,3 +56,5 @@
 	lola = !git lol --all
 
 # vim: tabstop=4 shiftwidth=4 noexpandtab ft=gitconfig
+[pull]
+	rebase = false
