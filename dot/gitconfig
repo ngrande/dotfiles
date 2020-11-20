@@ -54,6 +54,7 @@
 
 	lol = log --pretty=format:'%C(green)%h %C(37)%cd %C(38)%an%C(auto)%d %C(bold)%s' --graph --date='format-local:%Y-%m-%d %H:%M:%S' --date-order
 	lola = !git lol --all
+	conflicts = diff --name-only --diff-filter=U
 
 # vim: tabstop=4 shiftwidth=4 noexpandtab ft=gitconfig
 [pull]
