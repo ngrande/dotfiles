@@ -37,6 +37,7 @@ for_window [class="Slack"] move to workspace $ws10
 for_window [class="Evolution"] move to workspace $ws10
 for_window [class="Whatsie"] move to workspace $ws10
 for_window [title="WhatsApp"] move to workspace $ws10
+for_window [title="Signal"] move to workspace $ws10
 for_window [class="[kK]ee[pP]ass*"] move to workspace $ws10
 for_window [title=".*[mM]icrosoft.*[tT]eams.*"] move to workspace $ws10
 
