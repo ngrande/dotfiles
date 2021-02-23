@@ -370,7 +370,7 @@ exec --no-startup-id picom -b --vsync
 # start an auto lock
 exec --no-startup-id xss-lock -- i3lock --color=000000
 
-exec --no-startup-id solaar
+exec solaar -whide --restart-on-wake-up
 
 exec --no-startup-id  redshift-gtk
 
