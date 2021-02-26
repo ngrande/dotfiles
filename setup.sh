@@ -54,4 +54,7 @@ do
 	sudo cp $hook /etc/pacman.d/hooks/
 done
 
+echo "Enabling redshift service"
+systemctl --user enable redshift-gtk.service
+
 echo "Finished."

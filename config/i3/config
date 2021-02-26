@@ -372,7 +372,7 @@ exec --no-startup-id xss-lock -- i3lock --color=000000
 
 exec solaar -whide --restart-on-wake-up
 
-exec --no-startup-id  redshift-gtk
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 # set keyboard layout
 # exec --no-startup-id setxkbmap -layout de
