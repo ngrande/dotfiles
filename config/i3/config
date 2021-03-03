@@ -309,43 +309,43 @@ bar {
 	}
 }
 
-set $mon_right DP-1-1
-set $mon_mid DP-1-3
-set $mon_left DP-1-2
+#set $mon_right DP-1-1
+#set $mon_mid DP-1-3
+#set $mon_left DP-1-2
 
-workspace 10 output $mon_right
-workspace 1 output $mon_mid
-workspace 2 output $mon_left
+#workspace 10 output $mon_right
+#workspace 1 output $mon_mid
+#workspace 2 output $mon_left
 
-bar {
-	tray_output primary
-
-	output HDMI1
-	output HDMI2
-	output HDMI3
-	output DP-0
-	output DP-1
-	output DP-2
-	output DP-3
-	output DP-1-1
-	output DP-1-2
-# do not ouput bar for primary
-#	output DP-1-3
-
-	position top
-
-	colors {
-		background $bgcolor
-		statusline $textcolor
-
-		# Type              border            background         text
-		focused_workspace   $focused-border   $focused-bgcolor   $focused-text
-		active_workspace    $active-border    $active-bgcolor    $active-text
-		inactive_workspace  $inactive-border  $inactive-bgcolor  $inactive-text
-		urgent_workspace    $urgent-border    $urgent-bgcolor    $urgent-text
-	}
-
-}
+#bar {
+#	tray_output primary
+#
+#	output HDMI1
+#	output HDMI2
+#	output HDMI3
+#	output DP-0
+#	output DP-1
+#	output DP-2
+#	output DP-3
+#	output DP-1-1
+#	output DP-1-2
+## do not ouput bar for primary
+##	output DP-1-3
+#
+#	position top
+#
+#	colors {
+#		background $bgcolor
+#		statusline $textcolor
+#
+#		# Type              border            background         text
+#		focused_workspace   $focused-border   $focused-bgcolor   $focused-text
+#		active_workspace    $active-border    $active-bgcolor    $active-text
+#		inactive_workspace  $inactive-border  $inactive-bgcolor  $inactive-text
+#		urgent_workspace    $urgent-border    $urgent-bgcolor    $urgent-text
+#	}
+#
+#}
 
 # --no-startup-id:
 # The --no-startup-id parameter disables startup-notification support 
